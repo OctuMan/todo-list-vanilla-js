@@ -34,9 +34,11 @@ function renderTask(taskId, taskTitle, taskStatus){
     // LocalStorage load handling 
     if(taskStatus === "done"){
         taskLabel.classList.add('task-done');
+        taskDiv.classList.add('task-done');
         checkDoneTask.checked = true;
     }else{
         taskLabel.classList.remove('task-done');
+        taskDiv.classList.remove('task-done');
         checkDoneTask.checked = false;
     }
 
@@ -63,12 +65,14 @@ function renderTask(taskId, taskTitle, taskStatus){
         if(e.target.checked){
             taskLabel.classList.add('task-done');
             taskDiv.setAttribute('task-status', 'done');
+            taskDiv.classList.add('task-done');
             checkDoneTask.value = 'done';
             updateLocalStorageTaskStatus(taskId, taskDiv.getAttribute('task-status'));
 
         }else{
             checkDoneTask.value = 'active';
             taskLabel.classList.remove('task-done');
+            taskDiv.classList.remove('task-done');
             taskDiv.setAttribute('task-status', 'active');
             updateLocalStorageTaskStatus(taskId, taskDiv.getAttribute('task-status'));
         }
@@ -78,8 +82,8 @@ function renderTask(taskId, taskTitle, taskStatus){
 addTaskBtn.addEventListener('click', addTask);
 
 //Local Storage Handle
-
 const STORAGE_KEY = 'task';
+
 function addTolocalStorage(taskId, taskTitle, taskStatus){
     let tasks = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
@@ -104,9 +108,9 @@ function keepLStasks(){
     });
 }
 
-
+//Update localStorage
 function updateLocalStorageTaskStatus(taskId, taskStatus){
-     let tasks = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [] ;
+    let tasks = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [] ;
 
         for(let i = 0; i < tasks.length; i++){
         if(tasks[i].id === taskId){
@@ -140,7 +144,6 @@ function removeFromLS(taskId){
 }
 
 // Filters handling
-
 let filtersItems = document.querySelectorAll("ul li");
 
 filtersItems.forEach(item => {

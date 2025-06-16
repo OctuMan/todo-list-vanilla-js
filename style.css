@@ -58,6 +58,7 @@ hr {
 
 #add-task-input:focus {
   border-color: #5f0c0c;
+
 }
 
 #addtask-btn {
@@ -136,13 +137,16 @@ hr {
   background: #f0f0f0;
   transform: translateY(-2px);
 }
-
+.tasks-container div.task-done {
+  background: #23c783;
+}
 /* Task Text */
 .tasks-container label {
   flex: 1;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
   user-select: none;
+  font-weight: bold;
 }
 
 .tasks-container label.task-done {
