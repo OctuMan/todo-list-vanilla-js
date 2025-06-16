@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoIt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+        <header class="header">
+        <h1>Lists :</h1>
+        <hr>
+    </header>
+    <main>
+        <div class="add-task-section">
+            <input type="text"  id="add-task-input" placeholder="Task Title...">
+            <input type="button" id="addtask-btn" value="Add task">
+        </div>
+        <div class="filter-tasks-section">
+            <ul class="filters">
+                    <li data-filter="all" class="active">All</li>
+                    <li data-filter="active">Active</li>
+                    <li data-filter="done">Done</li>
+            </ul>
+        </div>
+        
+        <div class="tasks-container">
+            <!-- tasks will be showed here  -->
+        </div>
+    </main>
+    <footer></footer>
+</div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+

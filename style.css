@@ -1,0 +1,200 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body Layout */
+body {
+  background: #f5f7fb;
+  color: #333;
+  padding: 40px 20px;
+  line-height: 1.6;
+}
+
+/* Container Wrapper */
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Main Heading */
+h1 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 28px;
+  color: #222;
+}
+
+/* Section Separator */
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 24px 0;
+}
+
+/* Add Task Section */
+.add-task-section {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+#add-task-input {
+  flex: 1;
+  padding: 12px 14px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.2s ease-in-out;
+}
+
+#add-task-input:focus {
+  border-color: #5f0c0c;
+}
+
+#addtask-btn {
+  padding: 12px 18px;
+  background: #5f0c0c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#addtask-btn:hover {
+  background: #3c0606;
+}
+
+/* Filter Section */
+.filter-tasks-section {
+  margin-bottom: 28px;
+}
+
+.filter-tasks-section h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  text-align: center;
+  color: #444;
+}
+
+.filter-tasks-section .filters {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-tasks-section .filters li {
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: #e0e0e0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-tasks-section .filters li:hover {
+  background: #c4c4c4;
+}
+
+.filter-tasks-section .filters li.active {
+  background: #5f0c0c;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Tasks Container */
+.tasks-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Task Card */
+.tasks-container div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #fdfdfd;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.tasks-container div:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+/* Task Text */
+.tasks-container label {
+  flex: 1;
+  font-size: 16px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tasks-container label.task-done {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Checkboxes */
+.tasks-container input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #5f0c0c;
+  cursor: pointer;
+}
+
+/* Delete Button */
+.tasks-container input[type="button"] {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.tasks-container input[type="button"]:hover {
+  background: #a71d2a;
+}
+
+/* Disabled Task (Filtered Out) */
+.tasks-container div.disabled {
+  display: none;
+}
+
+/* Responsive Layout */
+@media (max-width: 500px) {
+  .add-task-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .filter-tasks-section .filters {
+    justify-content: flex-start;
+  }
+
+  .tasks-container div {
+    flex-wrap: wrap;
+  }
+
+  .tasks-container label {
+    flex: 100%;
+    margin-top: 6px;
+  }
+}
