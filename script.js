@@ -164,8 +164,36 @@ filtersItems.forEach(item => {
         })
     })
 })
-
-
 document.addEventListener('DOMContentLoaded', () => {
     keepLStasks();
+    loadThemeMode();
 });
+
+// Add theme toggle functionality (later)
+const THEME_KEY = 'theme';
+
+let themeToggleSwitch = document.querySelector('#toggle-switchBtn');
+let container = document.querySelector('.container');
+if(themeToggleSwitch){
+    themeToggleSwitch.addEventListener('change', function (){
+    if(themeToggleSwitch.checked){
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark-mode');
+    }else{
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light-mode');
+    }
+})
+}
+
+function loadThemeMode(){
+    let theme = localStorage.getItem(THEME_KEY);
+    if(theme === 'dark-mode'){
+        themeToggleSwitch.checked = true;
+        document.body.classList.add('dark-mode');
+
+    }else{
+        themeToggleSwitch.checked = false;
+        document.body.classList.remove('dark-mode');
+    }
+} 

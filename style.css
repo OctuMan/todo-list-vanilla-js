@@ -182,6 +182,13 @@ hr {
   display: none;
 }
 
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+
 /* Responsive Layout */
 @media (max-width: 500px) {
   .add-task-section {
